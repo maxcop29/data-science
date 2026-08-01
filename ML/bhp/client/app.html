@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangalore Home Price Prediction</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body onload="onPageLoad()">
+
+  <div class="card">
+    <div class="card-header">
+      <h1>Bangalore Home Price Prediction</h1>
+      <p class="subtitle">Estimate the market value of a home based on its features</p>
+    </div>
+
+    <form id="priceForm" onsubmit="return false;">
+
+      <!-- Area -->
+      <div class="form-group">
+        <label for="area">Area (Square Feet)</label>
+        <input type="number" id="area" name="area" placeholder="e.g. 1200" min="1" required>
+      </div>
+
+      <!-- BHK -->
+      <div class="form-group">
+        <label>BHK</label>
+        <div class="radio-group" id="bhkGroup">
+          <label class="radio-pill">
+            <input type="radio" name="bhk" value="1">
+            <span>1</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bhk" value="2">
+            <span>2</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bhk" value="3">
+            <span>3</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bhk" value="4">
+            <span>4</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bhk" value="5">
+            <span>5</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Bathrooms -->
+      <div class="form-group">
+        <label>Bathrooms</label>
+        <div class="radio-group" id="bathGroup">
+          <label class="radio-pill">
+            <input type="radio" name="bath" value="1">
+            <span>1</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bath" value="2">
+            <span>2</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bath" value="3">
+            <span>3</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bath" value="4">
+            <span>4</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="bath" value="5">
+            <span>5</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="form-group">
+        <label for="location">Location</label>
+        <select id="uiLocations" name="location">
+          <option value="" disabled selected>Loading locations...</option>
+        </select>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn-estimate" onclick="onClickedEstimatePrice()">
+        Estimate Price
+      </button>
+
+      <!-- Result -->
+      <div class="result-box">
+        <span class="result-label">Estimated Price</span>
+        <div id="uiEstimatedPrice" class="result-value">-- Lakh</div>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
